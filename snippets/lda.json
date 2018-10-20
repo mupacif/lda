@@ -1,0 +1,79 @@
+{
+	"écrire": {
+		"prefix": "écrire",
+		"body": "écrire \"$1\" \n$0",
+		"description": "écrire \"...\""
+	},
+	"max": {
+		"prefix": "max",
+		"body": "max(${1:a},${2:b})",
+		"description": "les plus grand de a ou de b"
+	},
+	"lire": {
+		"prefix": "lire",
+		"body": "lire ${1:variable}",
+		"description": "lire ..."
+	},
+	"tant-que": {
+		"prefix": "tant-que",
+		"body": [
+			"tant-que ${1:condition} faire",
+			"\t${2:quoi}",
+			"ftant"
+		],
+		"description": "boucle tant que"
+	},
+	"répéter": {
+		"prefix": "répéter",
+		"body": [
+			"répéter",
+			"\t${1:quoi}",
+			"jusqu'à-ce-que ${2:condition}"
+		],
+		"description": "boucle répéter juqu'à ce que"
+	},
+	"pour": {
+		"prefix": "pour",
+		"body": [
+			"pour ${1:element} de ${2:val_init} à ${3:val_finale} faire",
+			"\t${4:quoi}",
+			"fpour"
+		],
+		"description": "boucle pour"
+	},
+	"si": {
+		"prefix": "si",
+		"body": [
+			"si ${1:condition} alors",
+			"\t${2:quoi}",
+			"fsi"
+		],
+		"description": "alternative si"
+	},
+	"si-sinon": {
+		"prefix": "si-sinon",
+		"body": [
+			"si",
+			"\t${1:quoi}",
+			"sinon",
+			"\t${2:sinon quoi?}",
+			"fsi"
+		],
+		"description": "sinon"
+	},
+	"var": {
+		"prefix": "var",
+		"body": [
+			"var ${1:varible}:${2:type}"
+		],
+		"description": "var"
+	},
+	"tableau": {
+		"prefix": "tableau",
+		"body": [
+			"tableau ${1:varible}[${2:taille}]:${3:type}"
+		],
+		"description": "tableaux"
+	}
+	
+}

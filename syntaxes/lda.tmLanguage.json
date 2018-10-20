@@ -1,0 +1,96 @@
+{  
+    "scopeName":"sources.lda",
+    "name":"lda",
+    "patterns":[
+        {  "name":"keyword.statement.lda",
+            "match":"\\b(si|alors|de|à|fsi|sinon|tant|tant-que|ftant|faire|répéter|jusqu'à|jusqu'à-ce-que|ce|que|pour|fpour)\\b"
+        },
+        {
+			"name": "support.type.lda",
+			"match": "(?x)\\b(Character|var|entier|r(é|e)el|bool(é|e)en|caract(è|e)re|tableau)\\b"
+        },
+        {
+			"name": "support.function.lda",
+			"match": "\\b(max|lire|écrire)\\b"
+        },
+        {
+			"name": "constant.language.lda",
+			"match": "\\b(vrai|VRAI|faux)\\b"
+        },
+        {
+			"name": "string.quoted.double.lda",
+			"begin": "\"",
+			"end": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.lda"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.lda"
+				}
+            }
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"name": "keyword.operator.lda",
+			"match": "[\\/=\\-+*<>:]|<-|<->|DIV|div|mod|MOD"
+        }
+	],
+	"repository": {
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.block.lda",
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.lda"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.lda"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comment"
+						}
+					]
+				},
+				{
+					"begin": "(^[ \\t]+)?(?=//)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.lda"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"name": "comment.line.double-slash.lda",
+							"begin": "//",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.lda"
+								}
+							},
+							"end": "\\n",
+							"patterns": [
+								{
+									"name": "punctuation.separator.continuation.lda",
+									"match": "(?>\\\\\\s*\\n)"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	}
+}
