@@ -53,10 +53,10 @@
 	"si-sinon": {
 		"prefix": "si-sinon",
 		"body": [
-			"si",
-			"\t${1:quoi}",
+			"si ${1:condition} alors",
+			"\t${2:quoi}",
 			"sinon",
-			"\t${2:sinon quoi?}",
+			"\t${3:sinon quoi?}",
 			"fsi"
 		],
 		"description": "sinon"
