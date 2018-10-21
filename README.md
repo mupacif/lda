@@ -8,7 +8,7 @@
   * Ecrire `ext install lda` dans la palette.
   * ou bien choisissez le dernier logo (extensions)
   * ![installation](https://user-images.githubusercontent.com/6844928/47269705-fb551000-d561-11e8-8699-3ebbcee6b608.gif)
-### usage
+
 
 ## coloration syntaxique
 * pour activer l'extention soit enregistrez vos fichier en .algo ou .lda
@@ -20,6 +20,7 @@
 * ![identation](https://user-images.githubusercontent.com/6844928/47269741-74546780-d562-11e8-9015-2e3b89822b35.gif)
 ## suggestions / snippets 
 * <kbd>Ctrl+Space</kbd> (Windows)
+* <kbd>Tab</kbd> pour naviger entre les options (Windows)
 * ![snippets](https://user-images.githubusercontent.com/6844928/47269763-ac5baa80-d562-11e8-97a2-95602783746b.gif)
 
 ## conversion en template C 
@@ -32,13 +33,14 @@
 ### remarques
  * en c , les conditions du do-while sont l'inverse du répéter-tantque, donc modifiez pour le pas rester coincé dans la boucle
 
- * tous les mots contenant mod et div sont bug
+ * modifiez scanf et printf
 
-
- ##LDA
+ * les constantes (const) sont ignoré aussi
+ ## LDA
 ### déclaration
-*var varible,varible2,..:type
-*tableau tab1[taille],tab2[taille]:type
+* var varible,varible2,..:type
+* const varible,varible2,..:type
+* tableau tab1[taille],tab2[taille]:type
 
 
 #### types :
@@ -75,7 +77,7 @@
 * / * + - DIV MOD
 ### opérateurs de comparaison
 * > < >= <= <> = 
-### affectations 
+### afféctation 
 * <- <>(pas dispo en C)
 
 ## types supportés
