@@ -56,7 +56,7 @@
 			"si ${1:condition} alors",
 			"\t${2:quoi}",
 			"sinon",
-			"\t${3:sinon quoi?}",
+			"\t${3:quoi?}",
 			"fsi"
 		],
 		"description": "sinon"

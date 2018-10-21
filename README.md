@@ -29,7 +29,56 @@
   
   ![template C](https://user-images.githubusercontent.com/6844928/47269795-fe043500-d562-11e8-8659-171f8117890e.gif)
 
-### types supportés
+### remarques
+ * en c , les conditions du do-while sont l'inverse du répéter-tantque, donc modifiez pour le pas rester coincé dans la boucle
+
+ * tous les mots contenant mod et div sont bug
+
+
+ ##LDA
+### déclaration
+*var varible,varible2,..:type
+*tableau tab1[taille],tab2[taille]:type
+
+
+#### types :
+ *   entier 
+ *   caractère
+ *   réel
+ *   booléen (n'existe pas en C)
+
+
+### altérnatives 
+ *   si condition alors
+        quoi
+    fsi
+
+ *   si condition alors
+        quoi
+    sinon
+        quoi?
+    fsi
+
+### boucles
+*    répéter
+        quoi
+    jusqu'à-ce-que condition
+*    tant-que condition faire
+        quoi
+    ftant
+*    pour element de val_init à val_finale faire
+        quoi
+    fpour
+
+
+### opérateurs arithmétiques 
+* / * + - DIV MOD
+### opérateurs de comparaison
+* > < >= <= <> = 
+### affectations 
+* <- <>(pas dispo en C)
+
+## types supportés
 
   * `.lda`
   * `.algo`
