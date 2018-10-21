@@ -78,7 +78,7 @@
 ### opérateurs de comparaison
 * > < >= <= <> = 
 ### afféctation 
-* <- <>(pas dispo en C)
+* <- <->(pas dispo en C)
 
 ## types supportés
 
