@@ -29,7 +29,7 @@
         "commands": [
             {
                 "command": "extension.lda",
-                "title": "lda formatting"
+                "title": "lda to C"
             }]
     },
     "scripts": {

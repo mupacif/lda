@@ -4,28 +4,51 @@ import TokenIterator from "./TokenIterator";
 import Tokens from "./Tokens";
 import TokenUtil from "./TokenUtil";
 import * as vscode from 'vscode';
-
+import {rules} from "./lda2c.json"
 
 export function activate(context: vscode.ExtensionContext) {
-    
+
     //on ajoute la tabulation quand l'user appuye sur enter
     vscode.languages.setLanguageConfiguration('lda',
-    {
-        onEnterRules: [
-            {
-                beforeText: /^.*(?:alors|faire|sinon|répéter)\s*$/,
-                action: { indentAction: vscode.IndentAction.Indent }
-            }
-        ]  
-    }
+        {
+            onEnterRules: [
+                {
+                    beforeText: /^.*(?:alors|faire|sinon|répéter)\s*$/,
+                    action: { indentAction: vscode.IndentAction.Indent }
+                }
+            ]
+        }
     );
-    
+
     //commande de compilation en C
     let disposable = vscode.commands.registerCommand('extension.lda', () => {
-        // The code you place here will be executed every time your command is executed
 
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+        let docs = vscode.window.activeTextEditor;
+        if (docs) {
+            let docTxt = docs.document.getText();
+            for(let {pattern,replace} of rules)
+               {
+                   docTxt = docTxt.replace(new RegExp(pattern,"gm"),replace);
+
+                    
+                }
+                console.log(docTxt);
+let tmplt = `#include <stdio.h>
+
+
+int main(void) {
+\t${docTxt}
+return 0;
+}
+`;
+                
+            // The code you place here will be executed every time your command is executed
+            //créer un fichier avec du texte
+            vscode.workspace.openTextDocument({ language: "c", content: tmplt }).then(doc => vscode.window.showTextDocument(doc));
+            // Display a message box to the user
+        }
+        else
+        vscode.window.showWarningMessage('mettez vous dans le fichier "lda" que vous voulez convertir');
     });
 
     context.subscriptions.push(disposable);
@@ -47,7 +70,7 @@ export function activate(context: vscode.ExtensionContext) {
             //classe permettant de savoir si un token est ouvrant ou fermant
             let tu = new TokenUtil(Tokens);
             //liste des éditions au document
-            let edits: vscode.TextEdit[]=[];
+            let edits: vscode.TextEdit[] = [];
             //classe permettant de parcourir le document
             let ti = new TextIterator(document);
             //si le document a une ligne à ligne
@@ -101,13 +124,13 @@ export function activate(context: vscode.ExtensionContext) {
                 }
                 // on sauvegarde l'édition
                 // edits.push(vscode.TextEdit.insert(line.range.start, "  ".repeat(lvl+offsetTok)));
-                edits.push(vscode.TextEdit.replace(line.range, "\t".repeat(lvl+offsetTok).concat(line.text.trim())));
+                edits.push(vscode.TextEdit.replace(line.range, "\t".repeat(lvl + offsetTok).concat(line.text.trim())));
 
-              
+
 
             }
-                //on execute l'édition
-                return  edits;
+            //on execute l'édition
+            return edits;
 
         }
     });
