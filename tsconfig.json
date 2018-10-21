@@ -5,6 +5,7 @@
         "outDir": "out",
         "resolveJsonModule": true,
         "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
         "lib": [
             "es6"
         ],

@@ -7,7 +7,7 @@
         },
         {
 			"name": "support.type.lda",
-			"match": "(?x)\\b(Character|var|entier|r(é|e)el|bool(é|e)en|caract(è|e)re|tableau)\\b"
+			"match": "(?x)\\b(Character|var|const|entier|r(é|e)el|bool(é|e)en|caract(è|e)re|tableau)\\b"
         },
         {
 			"name": "support.function.lda",
@@ -15,12 +15,12 @@
         },
         {
 			"name": "constant.language.lda",
-			"match": "\\b(vrai|VRAI|faux)\\b"
+			"match": "\\b(vrai|faux)\\b"
         },
         {
 			"name": "string.quoted.double.lda",
-			"begin": "\"",
-			"end": "\"",
+			"begin": "\"|'",
+			"end": "\"|'",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.definition.string.begin.lda"
@@ -37,7 +37,7 @@
 		},
 		{
 			"name": "keyword.operator.lda",
-			"match": "[\\/=\\-+*<>:]|<-|<->|DIV|div|mod|MOD"
+			"match": "[\\/=\\-+*<>:]|<-|<->|DIV|div|mod|MOD|\\b(ou|et)\\b"
         }
 	],
 	"repository": {
