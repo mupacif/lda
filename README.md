@@ -6,6 +6,7 @@
 
   * ouvrir la palette de commande <kbd>Ctrl+P</kbd>.
   * Ecrire `ext install lda` dans la palette.
+  * ou bien choisissez le dernier logo (extensions)
   * ![installation](https://user-images.githubusercontent.com/6844928/47269705-fb551000-d561-11e8-8699-3ebbcee6b608.gif)
 ### usage
 
