@@ -11,6 +11,8 @@
 ### usage
 
 ## coloration syntaxique
+* pour activer l'extention soit enregistrez vos fichier en .algo ou .lda
+* ou bien choisissez le language dans les choix(comme sur le gif)
 * ![coloration](https://user-images.githubusercontent.com/6844928/47269722-2b9cae80-d562-11e8-860d-582fda6c8e93.gif)
 
 ## identation
