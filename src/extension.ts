@@ -5,6 +5,8 @@ import Tokens from "./Tokens";
 import TokenUtil from "./TokenUtil";
 import * as vscode from 'vscode';
 import regx = require("./lda2c.json")
+import CompileToC from "./compilation/toC/CompilerToC";
+import Compilator from "./compilation/Compilator";
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -25,31 +27,19 @@ export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand('extension.lda', () => {
 
         let docs = vscode.window.activeTextEditor;
-        if (docs) {
-            let docTxt = docs.document.getText();
-            for(let {pattern,replace} of rules)
-               {
-                   docTxt = docTxt.replace(new RegExp(pattern,"gm"),replace);
+ 
 
-                    
-                }
-                console.log(docTxt);
-let tmplt = `#include <stdio.h>
-
-
-int main(void) {
-\t${docTxt}
-return 0;
-}
-`;
+        if(!docs){
+            vscode.window.showWarningMessage('mettez vous dans le fichier "lda" que vous voulez convertir');
+            return;
+        }
+        let compilator = new Compilator(new CompileToC(docs.document.getText()));
                 
             // The code you place here will be executed every time your command is executed
             //créer un fichier avec du texte
-            vscode.workspace.openTextDocument({ language: "c", content: tmplt }).then(doc => vscode.window.showTextDocument(doc));
+            vscode.workspace.openTextDocument({ language: "c", content: compilator.getResult() }).then(doc => vscode.window.showTextDocument(doc));
             // Display a message box to the user
-        }
-        else
-        vscode.window.showWarningMessage('mettez vous dans le fichier "lda" que vous voulez convertir');
+
     });
 
     context.subscriptions.push(disposable);
