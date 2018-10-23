@@ -18,15 +18,35 @@ export default class CompileToC extends Compiler {
                     
                 }
          }
-         let tmplt = `#include <stdio.h>
+let tmplt = 
+`#include <stdio.h>
 
-
-         int main(void) {
-         \t${docTxt}
-         return 0;
-         }
-         `;
-         
+int main(int argc,char *argv[]) {
+${docTxt}
+return 0;
+}
+`;
+         this.printfCorrection(tmplt);
          return tmplt;
+     }
+
+     printfCorrection(doc: string){
+         console.log("printf??");
+
+        // two matches: opening <h1> and closing </h1> tags
+        let reg = /printf\((.*?)\)/gm;
+        
+        let match;
+        
+        while (match = reg.exec(doc)) {
+          // first shows the match: <h1>,h1
+          // then shows the match: </h1>,/h1
+            console.log(match[1]);
+            let reg = /[(,](.*?)[,)]/gm;
+            let match2 ;
+            while (match2 = reg.exec(match[1])) 
+                   console.log(match2);  
+            
+        }
      }
 }

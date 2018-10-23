@@ -4,13 +4,11 @@ import TokenIterator from "./TokenIterator";
 import Tokens from "./Tokens";
 import TokenUtil from "./TokenUtil";
 import * as vscode from 'vscode';
-import regx = require("./lda2c.json")
 import CompileToC from "./compilation/toC/CompilerToC";
 import Compilator from "./compilation/Compilator";
 
 export function activate(context: vscode.ExtensionContext) {
 
-    let rules = regx.rules;
     //on ajoute la tabulation quand l'user appuye sur enter
     vscode.languages.setLanguageConfiguration('lda',
         {
