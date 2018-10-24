@@ -7,7 +7,7 @@
         },
         {
 			"name": "support.type.lda",
-			"match": "(?x)\\b(Character|var|const|entier|r(é|e)el|bool(é|e)en|caract(è|e)re|tableau)\\b"
+			"match": "(?x)\\b(Character|var|const|entier|r(é|e)el|bool(é|e)en|caract(è|e)re|tableau|tab)\\b"
         },
         {
 			"name": "support.function.lda",
