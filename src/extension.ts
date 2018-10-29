@@ -1,8 +1,8 @@
 'use strict';
-import { TextIterator } from "./TextIterator";
-import TokenIterator from "./TokenIterator";
-import Tokens from "./Tokens";
-import TokenUtil from "./TokenUtil";
+import { TextIterator } from "./indentation/TextIterator";
+import TokenIterator from "./indentation/TokenIterator";
+import Tokens from "./indentation/Tokens";
+import TokenUtil from "./indentation/TokenUtil";
 import * as vscode from 'vscode';
 import CompileToC from "./compilation/toC/CompilerToC";
 import Compilator from "./compilation/Compilator";
