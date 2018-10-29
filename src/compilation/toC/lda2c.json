@@ -55,7 +55,7 @@
         ,
         {  "name":"répéter",
             "pattern": "répéter\\s*([\\s\\S)]*?)(?:jusqu'à ce que|jusqu'à-ce-que)(.*)",
-            "replace": "do{\n\t$1}while($2);//<- inversez la condition ICI ! "
+            "replace": "do{\n\t$1}while(!($2));//<- inversez la condition ICI ! "
         }
         ,
         {  "name":"pour",
