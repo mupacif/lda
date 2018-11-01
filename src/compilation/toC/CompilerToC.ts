@@ -2,21 +2,18 @@ import regx = require("./lda2c.json")
 import Compiler from "../Compiler.js";
 import TypesManager from "../TypesManager.js";
 export default class CompileToC extends Compiler {
-
+    tm : TypesManager;
     constructor(doc: string) {
         super(doc);
+        this.tm = new TypesManager(doc);
     }
 
     compile(): string {
         let rules = regx.rules;
         let docTxt = this.document;
-        new TypesManager(docTxt);
         if (this.document) {
-
             for (let { pattern, replace } of rules) {
                 docTxt = docTxt.replace(new RegExp(pattern, "gm"), replace);
-
-
             }
         }
         let tmplt =

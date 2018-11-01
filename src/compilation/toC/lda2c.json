@@ -80,7 +80,7 @@
         ,
         {  "name":"lire",
             "pattern": "lire\\W+(\\w*)",
-            "replace": "scanf(\"%type\",&$1);//<- modifiez le type: entier=>\"%d\",réel=>\"%f\",caractère=>\" %c\"(avec un espace avant %),.."
+            "replace": "scanf($1);//<- modifiez le type: entier=>\"%d\",réel=>\"%f\",caractère=>\" %c\"(avec un espace avant %),.."
         }
         ,
         {  "name":"écrire",
