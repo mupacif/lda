@@ -1,6 +1,6 @@
 {
   "name": "lda",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Utilitaires pour le langage lda.",
   "engines": {
     "vscode": "^1.28.0"
