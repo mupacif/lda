@@ -55,7 +55,7 @@
         ,
         {  "name":"répéter",
             "pattern": "répéter\\s*([\\s\\S)]*?)(?:jusqu'à ce que|jusqu'à-ce-que)(.*)",
-            "replace": "do{\n\t$1}while(!($2));//<- inversez la condition ICI ! "
+            "replace": "do{\n\t$1}while(!($2)); "
         }
         ,
         {  "name":"pour",
@@ -80,12 +80,12 @@
         ,
         {  "name":"lire",
             "pattern": "lire\\W+(\\w*)",
-            "replace": "scanf($1);//<- modifiez le type: entier=>\"%d\",réel=>\"%f\",caractère=>\" %c\"(avec un espace avant %),.."
+            "replace": "scanf($1);//<- vérifiez "
         }
         ,
         {  "name":"écrire",
             "pattern": "écrire\\s*(.*)",
-            "replace": "printf($1);//<- vérifiez (et modifier) ici"
+            "replace": "printf($1);//<- vérifiez "
         }
     ]
 }
